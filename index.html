@@ -23,6 +23,12 @@
             var password = document.getElementById("password").value;
             var confirm = document.getElementById("confirm").value;
             var id = document.getElementById("idCard").value;
+            var data ={
+                "uname":name,
+                "upwd":password,
+                "ucf":confirm,
+                "uid":id
+            }
             if (name.length > 6)
             {
                 alert("用户名长度不得超过6个字符！");
