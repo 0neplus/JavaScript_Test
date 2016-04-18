@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<form method="post">
+    用户名：
+    <input type="text" onclick="myFunction()" id="username"><br/>
+    密码：
+    <input type="password" id="password"><br/>
+    密码确认：
+    <input type="password" onclick="myFunction()" id="confirm"><br/>
+    身份证：
+    <input type="text" maxlength="25" id="idCard"><br/>
+    <button type="submit" onclick="myFunction()">Submit</button><br/>
+    </form>
+
+    <script>
+        function myFunction() {
+            var name = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var confirm = document.getElementById("confirm").value;
+            var id = document.getElementById("idCard").value;
+            if (name.length > 6)
+            {
+                alert("用户名长度不得超过6个字符！");
+
+            }
+            if (password != confirm)
+            {
+                alert("密码错误！");
+                return false;
+            }
+            if (id.length != 15 && id.length != 18)
+            {
+                alert("身份证长度应该为15位或者18位！");
+                return false;
+            }
+            if (!/(^\d{15}$)|(^\d{17}([0-9]|X)$)/.test(id)) {
+                alert("身份证非法输入！");
+                return false;
+            }
+            if (!/^[a-zA-Z]{1}[0-9a-zA-Z_]{1,}$/.test(name)) {
+                alert("用户名必须由数字或英文组成！");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
